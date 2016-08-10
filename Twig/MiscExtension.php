@@ -53,7 +53,8 @@ class MiscExtension extends \Twig_Extension
         if ($bytes <= $unit) return $bytes . " B";
         $exp = intval((log($bytes) / log($unit)));
         $pre = ($si ? "kMGTPE" : "KMGTPE");
-        $pre = $pre[$exp - 1] . ($si ? "" : "i");
+//        $pre = $pre[$exp - 1] . ($si ? "" : "i");
+        $pre = $pre[$exp - 1];
         return sprintf("%.1f %sB", $bytes / pow($unit, $exp), $pre);
     }
 
